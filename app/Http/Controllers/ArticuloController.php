@@ -89,6 +89,7 @@ class ArticuloController extends Controller
         $articulo->update();
         return Redirect::to('almacen/articulo');
     }
+    
     public function destroy($id)
     {
         $articulo=Articulo::findOrFail($id);

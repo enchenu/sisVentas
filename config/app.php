@@ -178,6 +178,8 @@ return [
         sisVentas\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
     ],
 
     /*

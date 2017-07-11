@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nueva Articulo</h3>
+			<h3>Nueva Cliente</h3>
 			@if (count($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -14,7 +14,7 @@
 			@endif
 		</div>
 	</div>
-		    {!!Form::open(array('url'=>'almacen/articulo','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
+		    {!!Form::open(array('url'=>'ventas/cliente','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
 	<div class="row">
 
@@ -26,44 +26,47 @@
 		</div>
 
 
+	<div class="col-lg-6 col-sm-6 col-xs-12">
+		<div class="form-group">
+            	<label for="direccion">Direccion</label>
+            	<input type="text" name="direccion" required value="{{old('direccion')}}" class="form-control" placeholder="Direccion...">
+            </div>
+		</div>
+
 		  <div class="col-lg-6 col-sm-6 col-xs-12">
 			<div class="form-group">
-            	<label>Categoria</label>
-            	<select name="idcategoria"  class="form-control selectpicker">
-            	@foreach ($categorias as $cat)
-            		<option value="{{$cat->idcategoria}}">{{$cat->nombre}}</option>
-            	@endforeach
+            	<label>Documento</label>
+            	<select name="tipo_documento" class="form-control">
+
+            		<option value="CI">Cedula de Identidad</option>
+            		<option value="RUC" >R.U.C.</option>
+								<option value="PAS">Pasaporte</option>
             	</select>
             </div>
 		</div>
 
 		<div class="col-lg-6 col-sm-6 col-xs-12">
 			<div class="form-group">
-            	<label for="codigo">Codigo</label>
-            	<input type="text" name="codigo" required value="{{old('codigo')}}" class="form-control" placeholder="Codigo...">
+            	<label for="num_documento">Numero de Documento</label>
+            	<input type="text" name="num_documento" required value="{{old('num_documento')}}" class="form-control" placeholder="Numero de Documento ...">
             </div>
 		</div>
 
 		<div class="col-lg-6 col-sm-6 col-xs-12">
 			<div class="form-group">
-            	<label for="stock">Stock</label>
-            	<input type="text" name="stock" required value="{{old('stock')}}" class="form-control" placeholder="Stock...">
+            	<label for="telefono">Telefono</label>
+            	<input type="text" name="telefono" required value="{{old('telefono')}}" class="form-control" placeholder="Telefono...">
             </div>
 		</div>
 
 		<div class="col-lg-6 col-sm-6 col-xs-12">
 			<div class="form-group">
-            	<label for="descripcion">Descripción</label>
-            	<input type="text" name="descripcion" equired value="{{old('descripcion')}}" class="form-control" placeholder="Descripción...">
+            	<label for="email">Email</label>
+            	<input type="email" name="email" equired value="{{old('email')}}" class="form-control" placeholder="Email...">
             </div>
 		</div>
 
-		<div class="col-lg-6 col-sm-6 col-xs-12">
-			<div class="form-group">
-            	<label for="imagen">Imagen</label>
-            	<input type="file" name="imagen" class="form-control">
-            </div>
-		</div>
+
 
 		<div class="col-lg-6 col-sm-6 col-xs-12">
 			<div class="form-group">
@@ -76,6 +79,5 @@
 
 
 			{!!Form::close()!!}
-
 
 @endsection
