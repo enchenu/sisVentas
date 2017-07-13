@@ -71,6 +71,8 @@ class ArticuloController extends Controller
 
     public function update(ArticuloFormRequest $request,$id)
     {
+
+
         $articulo=Articulo::findOrFail($id);
 
         $articulo->idcategoria=$request->get('idcategoria');
@@ -81,15 +83,16 @@ class ArticuloController extends Controller
         $articulo->estado='Activo';
 
         if (Input::hasFile('imagen')){
+
          $file=Input::file('imagen');
          $file->move(public_path().'/imagenes/articulos/',$file->getClientOriginalName());
          $articulo->imagen=$file->getClientOriginalName();
         }
 
-        $articulo->update();
+       $articulo->update();
         return Redirect::to('almacen/articulo');
     }
-    
+
     public function destroy($id)
     {
         $articulo=Articulo::findOrFail($id);

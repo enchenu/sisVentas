@@ -6,7 +6,8 @@ use sisVentas\Http\Requests\Request;
 
 class IngresoFormRequest extends Request
 {
-     public function authorize()
+
+    public function authorize()
     {
         return true;
     }
