@@ -35,8 +35,7 @@
 					<td>
 						<a href="{{URL::action('VentaController@show',$ven->idventa)}}"><button class="btn btn-info">Detalle</button></a>
 						<a href="{{url('crearPdf',$ven->idventa)}}"><button class="btn btn-success">Ver PDF</button></a>
-
-                         <a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Anular<button></a>
+						<a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
 					</td>
 				</tr>
 
